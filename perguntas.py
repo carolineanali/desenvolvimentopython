@@ -1,5 +1,5 @@
 
-print('Esse pequeno programa irá testar seus conhecimentos gerais! escolha entre as alternativas a seguir e boa sorte! ')
+print('Esse pequeno programa irá testar seus conhecimentos gerais! escolha entre as alternativas [a, b, c ou d] a seguir e boa sorte! ')
 print()
 perguntas = {
     'Primeira pergunta': {
@@ -20,7 +20,7 @@ perguntas = {
 }
 
 respostas_corretas = 0
-
+respostas_possiveis = ['a', 'b', 'c', 'd']
 
 for chave, valor in perguntas.items():
     print(f"{chave}: {valor['pergunta']}")
@@ -30,7 +30,8 @@ for chave, valor in perguntas.items():
         print(f'{rk}: {rv}')
 
     sua_resposta = input('Digite sua resposta: ')
-    if sua_resposta.isalpha():
+
+    if sua_resposta in respostas_possiveis:
         if sua_resposta == valor['resposta_correta']:
             print('Resposta correta! Você é um gênio!')
             respostas_corretas += 1
@@ -38,8 +39,8 @@ for chave, valor in perguntas.items():
             print('Você errou!')
 
     else:
-        print('Digite uma letra! Tente Novamente. ')
-        break
+        print('Digite uma das alternativas solicitadas! ')
+        continue
 
     print()
 
